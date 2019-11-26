@@ -1,12 +1,9 @@
 package co.uniquindio.mundo;
 
-public class Date {
+public class Fecha {
 	private int año, mes, dia;
 	
-	public Date () {}
-	
-	public Date(int año, int mes, int dia) {
-		super();
+	public Fecha(int año, int mes, int dia) {
 		this.año = año;
 		this.mes = mes;
 		this.dia = dia;

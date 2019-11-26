@@ -8,10 +8,14 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.border.LineBorder;
+
+import co.uniquindio.mundo.Cliente;
+
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class Home extends JFrame implements ActionListener {
@@ -21,6 +25,8 @@ public class Home extends JFrame implements ActionListener {
 	private JButton btnIngresar;
 	private JButton btnX;
 	private JButton btnAdministrador;
+
+	private ArrayList<Cliente> clientes;
 
 	/**
 	 * Launch the application.
@@ -45,6 +51,7 @@ public class Home extends JFrame implements ActionListener {
 
 		setUndecorated(true);
 		setResizable(false);
+		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 350);
 		contentPane = new JPanel();
@@ -72,7 +79,7 @@ public class Home extends JFrame implements ActionListener {
 		btnIngresar = new JButton("Ingresar");
 		btnIngresar.setBounds(313, 213, 89, 23);
 		contentPane.add(btnIngresar);
-		
+
 		btnAdministrador = new JButton("Administrador");
 		btnAdministrador.setBounds(194, 268, 104, 23);
 		contentPane.add(btnAdministrador);
@@ -81,17 +88,32 @@ public class Home extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-	
-		if(e.getSource() == btnX) {
-			
+
+		if (e.getSource() == btnX) {
+
 			System.exit(0);
-		} 
-		
-		if(e.getSource() == btnInscribirse) {
-			
-			
 		}
-		
-		
+
+		if (e.getSource() == btnInscribirse) {
+
+			this.dispose();
+			Inscripcion inscripcion = new Inscripcion(this);
+			inscripcion.setLocationRelativeTo(null);
+			inscripcion.setVisible(true);
+		}
+
 	}
+
+	public void agregarClientes(Cliente cliente) {
+		clientes.add(cliente);
+	}
+
+	public ArrayList<Cliente> getClientes() {
+		return clientes;
+	}
+
+	public void setClientes(ArrayList<Cliente> clientes) {
+		this.clientes = clientes;
+	}
+
 }

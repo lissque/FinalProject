@@ -1,18 +1,16 @@
 package co.uniquindio.mundo;
 
-
 public class Cliente {
-	
+
 	private String id, nombre, apellido, direccion, email;
-	private Date fechaNacimiento;
+	private Fecha fechaNacimiento;
 	private int estrato;
-	private NivelEstudio nivelEstudio;
-	private EstadoCivil estadoCivil;
-	private Genero genero;
-	private Tarjeta miTarjeta;
-	
-	public Cliente(String id, String nombre, String apellido, String direccion, String email, Date fechaNacimiento,
-			int estrato, NivelEstudio nivelEstudio, EstadoCivil estadoCivil, Genero genero, Tarjeta miTarjeta) {
+	private String nivelEstudio;
+	private String estadoCivil;
+	private String genero;
+
+	public Cliente(String id, String nombre, String apellido, String direccion, String email, Fecha fechaNacimiento,
+			int estrato, String nivelEstudio, String estadoCivil, String genero) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -24,10 +22,7 @@ public class Cliente {
 		this.nivelEstudio = nivelEstudio;
 		this.estadoCivil = estadoCivil;
 		this.genero = genero;
-		this.miTarjeta = miTarjeta;
 	}
-	
-	public Cliente() {}
 
 	public String getId() {
 		return id;
@@ -69,11 +64,11 @@ public class Cliente {
 		this.email = email;
 	}
 
-	public Date getFechaNacimiento() {
+	public Fecha getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
+	public void setFechaNacimiento(Fecha fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
@@ -85,37 +80,27 @@ public class Cliente {
 		this.estrato = estrato;
 	}
 
-	public NivelEstudio getNivelEstudio() {
+	public String getNivelEstudio() {
 		return nivelEstudio;
 	}
 
-	public void setNivelEstudio(NivelEstudio nivelEstudio) {
+	public void setNivelEstudio(String nivelEstudio) {
 		this.nivelEstudio = nivelEstudio;
 	}
 
-	public EstadoCivil getEstadoCivil() {
+	public String getEstadoCivil() {
 		return estadoCivil;
 	}
 
-	public void setEstadoCivil(EstadoCivil estadoCivil) {
+	public void setEstadoCivil(String estadoCivil) {
 		this.estadoCivil = estadoCivil;
 	}
 
-	public Genero getGenero() {
+	public String getGenero() {
 		return genero;
 	}
 
-	public void setGenero(Genero genero) {
+	public void setGenero(String genero) {
 		this.genero = genero;
 	}
-
-	public Tarjeta getMiTarjeta() {
-		return miTarjeta;
-	}
-
-	public void setMiTarjeta(Tarjeta miTarjeta) {
-		this.miTarjeta = miTarjeta;
-	}
-	
-	
 }
