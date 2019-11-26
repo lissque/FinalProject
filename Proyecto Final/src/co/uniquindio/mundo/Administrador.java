@@ -1,17 +1,15 @@
 package co.uniquindio.mundo;
 
-public class Usuario {
-	
+public class Administrador {
 	private String id;
 	private String contraseña;
 	
-	public Usuario(String id, String contraseña) {
-		super();
+	public Administrador (String id, String contraseña) {
 		this.id = id;
 		this.contraseña = contraseña;
 	}
 	
-	public Usuario () {}
+	public Administrador () {}
 
 	public String getId() {
 		return id;
@@ -28,6 +26,4 @@ public class Usuario {
 	public void setContraseña(String contraseña) {
 		this.contraseña = contraseña;
 	}
-	
-	
 }

@@ -3,14 +3,14 @@ package co.uniquindio.mundo;
 public class Cliente {
 	
 	private String id, nombre, apellido, direccion, email;
-	private Date fechaNacimiento;
+	private Fecha fechaNacimiento;
 	private int estrato;
 	private NivelEstudio nivelEstudio;
 	private EstadoCivil estadoCivil;
 	private Genero genero;
 	private Tarjeta miTarjeta;
 	
-	public Cliente(String id, String nombre, String apellido, String direccion, String email, Date fechaNacimiento,
+	public Cliente(String id, String nombre, String apellido, String direccion, String email, Fecha fechaNacimiento,
 			int estrato, NivelEstudio nivelEstudio, EstadoCivil estadoCivil, Genero genero, Tarjeta miTarjeta) {
 		super();
 		this.id = id;
@@ -68,11 +68,11 @@ public class Cliente {
 		this.email = email;
 	}
 
-	public Date getFechaNacimiento() {
+	public Fecha getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
+	public void setFechaNacimiento(Fecha fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 

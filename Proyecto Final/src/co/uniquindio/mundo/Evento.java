@@ -6,12 +6,12 @@ public class Evento {
 	
 	private ArrayList<Cliente> misClientes;
 	private ArrayList<Registro> misRegistros;
-	private ArrayList<Usuario> misUsuarios;
+	private ArrayList<Administrador> misUsuarios;
 	
 	public Evento() {
 		misClientes =  new ArrayList<Cliente>();
 		misRegistros = new ArrayList<Registro>();
-		misUsuarios = new ArrayList<Usuario>();
+		misUsuarios = new ArrayList<Administrador>();
 	}
 	
 	public void agregarCliente (Cliente miC) {
@@ -22,7 +22,7 @@ public class Evento {
 		misRegistros.add(miR);
 	}
 	
-	public void agregarUsuario (Usuario miU) {
+	public void agregarUsuario (Administrador miU) {
 		misUsuarios.add(miU);
 	}
 
@@ -42,11 +42,11 @@ public class Evento {
 		this.misRegistros = misRegistros;
 	}
 
-	public ArrayList<Usuario> getMisUsuarios() {
+	public ArrayList<Administrador> getMisUsuarios() {
 		return misUsuarios;
 	}
 
-	public void setMisUsuarios(ArrayList<Usuario> misUsuarios) {
+	public void setMisUsuarios(ArrayList<Administrador> misUsuarios) {
 		this.misUsuarios = misUsuarios;
 	}
 	
