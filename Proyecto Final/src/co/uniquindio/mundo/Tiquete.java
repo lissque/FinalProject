@@ -3,12 +3,12 @@ package co.uniquindio.mundo;
 public class Tiquete {
 	
 	private Cliente miCliente;
-	private Seccion seccion;
+	private TipoSeccion seccion;
 	private char fila;
 	private int asiento;
 	private double precio;
 	
-	public Tiquete(Cliente miCliente, Seccion seccion, char fila, int asiento, double precio) {
+	public Tiquete(Cliente miCliente, TipoSeccion seccion, char fila, int asiento, double precio) {
 		super();
 		this.miCliente = miCliente;
 		this.seccion = seccion;
@@ -25,11 +25,11 @@ public class Tiquete {
 		this.miCliente = miCliente;
 	}
 
-	public Seccion getSeccion() {
+	public TipoSeccion getSeccion() {
 		return seccion;
 	}
 
-	public void setSeccion(Seccion seccion) {
+	public void setSeccion(TipoSeccion seccion) {
 		this.seccion = seccion;
 	}
 
