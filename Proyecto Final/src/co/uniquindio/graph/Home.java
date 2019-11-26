@@ -11,10 +11,16 @@ import javax.swing.border.LineBorder;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class Home extends JFrame {
+public class Home extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
+	private JButton btnInscribirse;
+	private JButton btnIngresar;
+	private JButton btnX;
+	private JButton btnAdministrador;
 
 	/**
 	 * Launch the application.
@@ -36,32 +42,56 @@ public class Home extends JFrame {
 	 * Create the frame.
 	 */
 	public Home() {
+
 		setUndecorated(true);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 350);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(0, 128, 0));
+		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 0), 5, true));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lblGestionDeEspectaculos = new JLabel("Gestion de Espectaculos");
 		lblGestionDeEspectaculos.setFont(new Font("Yu Gothic UI Light", Font.BOLD | Font.ITALIC, 35));
 		lblGestionDeEspectaculos.setForeground(Color.WHITE);
 		lblGestionDeEspectaculos.setBounds(43, 27, 447, 73);
 		contentPane.add(lblGestionDeEspectaculos);
-		
-		JButton btnX = new JButton("X");
+
+		btnX = new JButton("X");
 		btnX.setBounds(443, 11, 47, 37);
 		contentPane.add(btnX);
-		
-		JButton btnInscribirse = new JButton("Inscribirse");
+		btnX.addActionListener(this);
+
+		btnInscribirse = new JButton("Inscribirse");
 		btnInscribirse.setBounds(88, 213, 89, 23);
 		contentPane.add(btnInscribirse);
+		btnInscribirse.addActionListener(this);
+
+		btnIngresar = new JButton("Ingresar");
+		btnIngresar.setBounds(313, 213, 89, 23);
+		contentPane.add(btnIngresar);
 		
-		JButton btnComprar = new JButton("Comprar");
-		btnComprar.setBounds(313, 213, 89, 23);
-		contentPane.add(btnComprar);
+		btnAdministrador = new JButton("Administrador");
+		btnAdministrador.setBounds(194, 268, 104, 23);
+		contentPane.add(btnAdministrador);
+		btnIngresar.addActionListener(this);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+	
+		if(e.getSource() == btnX) {
+			
+			System.exit(0);
+		} 
+		
+		if(e.getSource() == btnInscribirse) {
+			
+			
+		}
+		
+		
 	}
 }
