@@ -1,11 +1,9 @@
 package co.uniquindio.graph;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.border.LineBorder;
 
@@ -48,10 +46,10 @@ public class Home extends JFrame implements ActionListener {
 	 * Create the frame.
 	 */
 	public Home() {
-
+		
+		setLocationRelativeTo(null);
 		setUndecorated(true);
 		setResizable(false);
-		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 350);
 		contentPane = new JPanel();

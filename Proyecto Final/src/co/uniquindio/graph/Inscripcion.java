@@ -16,8 +16,12 @@ import javax.swing.JMenuItem;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.event.MenuListener;
-import javax.swing.event.MenuEvent;
+import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JRadioButtonMenuItem;
+import java.awt.Choice;
+import java.awt.ComponentOrientation;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class Inscripcion extends JFrame implements ActionListener {
 
@@ -30,28 +34,11 @@ public class Inscripcion extends JFrame implements ActionListener {
 	private JTextField txtMes;
 	private JTextField txtAnio;
 	private JTextField txtMail;
-	private JMenu mnGenero;
-	private JMenu mnEstrato;
-	private JMenu mnNivelEstudio;
 	private JButton btnAgregar;
 	private JButton btnCancelar;
 
 	private Home home;
-	private JMenuItem estrato1;
-	private JMenuItem estrato2;
-	private JMenuItem estrato3;
-	private JMenuItem bachiller;
-	private JMenuItem pregrado;
-	private JMenuItem maestria;
-	private JMenuItem doctorado;
-	private JMenuItem soltero;
-	private JMenuItem casado;
-	private JMenuItem unionLibre;
-	private JMenuItem divorsiado;
-	private JMenuItem viudo;
-	private JMenuItem masculino;
-	private JMenuItem femenino;
-	private JMenu mnEstadoCivil;
+	private JComboBox cbEstrato;
 
 	/**
 	 * Create the frame.
@@ -150,58 +137,6 @@ public class Inscripcion extends JFrame implements ActionListener {
 		contentPane.add(txtMail);
 		txtMail.setColumns(10);
 
-		mnGenero = new JMenu("GENERO");
-		mnGenero.setAlignmentY(Component.BOTTOM_ALIGNMENT);
-		mnGenero.addActionListener(this);
-		mnGenero.setBounds(161, 316, 137, 22);
-		contentPane.add(mnGenero);
-
-		masculino = new JMenuItem("MASCULINO");
-		femenino = new JMenuItem("FEMENINO");
-		mnGenero.add(masculino);
-		mnGenero.add(femenino);
-
-		mnEstrato = new JMenu("ESTRATO");
-		mnGenero.setAlignmentY(Component.BOTTOM_ALIGNMENT);
-		mnGenero.addActionListener(this);
-		mnEstrato.setBounds(161, 211, 137, 22);
-		contentPane.add(mnEstrato);
-
-		estrato1 = new JMenuItem("1");
-		estrato2 = new JMenuItem("2");
-		estrato3 = new JMenuItem("3");
-		mnEstrato.add(estrato1);
-		mnEstrato.add(estrato2);
-		mnEstrato.add(estrato3);
-
-		mnNivelEstudio = new JMenu("NIVEL ESTUDIO");
-		mnNivelEstudio.setBounds(161, 248, 137, 22);
-		contentPane.add(mnNivelEstudio);
-
-		bachiller = new JMenuItem("BACHILLER");
-		pregrado = new JMenuItem("PREGRADO");
-		maestria = new JMenuItem("MAESTRIA");
-		doctorado = new JMenuItem("DOCTORADO");
-		mnNivelEstudio.add(bachiller);
-		mnNivelEstudio.add(pregrado);
-		mnNivelEstudio.add(maestria);
-		mnNivelEstudio.add(doctorado);
-
-		mnEstadoCivil = new JMenu("ESTADO CIVIL");
-		mnEstadoCivil.setBounds(161, 283, 137, 22);
-		contentPane.add(mnEstadoCivil);
-
-		soltero = new JMenuItem("SOLTERO");
-		casado = new JMenuItem("CASADO");
-		unionLibre = new JMenuItem("UNION LIBRE");
-		divorsiado = new JMenuItem("DIVORSIADO");
-		viudo = new JMenuItem("VIUDO");
-		mnEstadoCivil.add(soltero);
-		mnEstadoCivil.add(casado);
-		mnEstadoCivil.add(unionLibre);
-		mnEstadoCivil.add(divorsiado);
-		mnEstadoCivil.add(viudo);
-
 		btnCancelar = new JButton("CANCELAR");
 		btnCancelar.setBounds(323, 432, 89, 23);
 		btnCancelar.addActionListener(this);
@@ -212,6 +147,11 @@ public class Inscripcion extends JFrame implements ActionListener {
 		btnAgregar.addActionListener(this);
 		btnAgregar.setBounds(209, 432, 89, 23);
 		contentPane.add(btnAgregar);
+		
+		cbEstrato = new JComboBox();
+		cbEstrato.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3"}));
+		cbEstrato.setBounds(161, 208, 137, 20);
+		contentPane.add(cbEstrato);
 
 	}
 
@@ -236,18 +176,21 @@ public class Inscripcion extends JFrame implements ActionListener {
 			int anioN = Integer.parseInt(txtAnio.getText());
 			Fecha fechaNacimiento = new Fecha(anioN, mesN, diaN);
 			String email = txtMail.getText();
-			int estrato = Integer.parseInt(mnEstrato.getText());
-			String nivelEstudio = mnNivelEstudio.getText();
-			String estadoCivil = mnEstadoCivil.getText();
-			String genero = mnGenero.getText();
+			// int estrato = Integer.parseInt(mnEstrato.getText());
+			// String nivelEstudio = mnNivelEstudio.getText();
+			// String estadoCivil = mnEstadoCivil.getText();
+			// String genero = mnGenero.getText();
+			// String gene = estrato.getSelectedItem();
+			int estrato = Integer.parseInt(cbEstrato.getSelectedItem().toString());
 
-			Cliente miCliente = new Cliente(id, nombre, apellido, direccion, email, fechaNacimiento, estrato,
-					nivelEstudio, estadoCivil, genero);
+			Cliente miCliente = new Cliente(id, nombre, apellido, direccion, email, fechaNacimiento, estrato, null,
+					null, null);
 
 			home.agregarClientes(miCliente);
 
 			this.dispose();
 			home.setVisible(true);
+			System.out.println(miCliente);
 
 		}
 
